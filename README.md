@@ -1,4 +1,4 @@
-KOModel
+KOModelr
 =======
 
 Creates Knockout models from JSON strings.
