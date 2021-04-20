@@ -95,9 +95,7 @@
 
             self.append('');
             self.append('   if (data) {');
-            for (var item in model) {
-                self.append('      self.' + stripOddCharacters(item) + '(data.' + stripOddCharacters(item) + ');');
-            }
+            self.append('      self.load(data);');
             self.append('   }');
             self.append('}');
         }
