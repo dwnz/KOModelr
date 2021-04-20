@@ -72,7 +72,7 @@
 
             outputBox.html('');
 
-            self.append('function ' + $('#txtName').val() + 'Model() {');
+            self.append('function ' + $('#txtName').val() + 'Model(data) {');
             self.append('   var self = this;');
             self.append('');
 
@@ -89,10 +89,16 @@
             self.append('');
             self.append('   self.load = function(data) {');
             for (var item in model) {
-                self.append('       self.' + stripOddCharacters(item) + '(data.' + stripOddCharacters(item) + ');');
+                self.append('      self.' + stripOddCharacters(item) + '(data.' + stripOddCharacters(item) + ');');
+            }
+            self.append('   };');
+
+            self.append('');
+            self.append('   if (data) {');
+            for (var item in model) {
+                self.append('      self.' + stripOddCharacters(item) + '(data.' + stripOddCharacters(item) + ');');
             }
             self.append('   }');
-
             self.append('}');
         }
 
